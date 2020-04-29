@@ -10,7 +10,7 @@ let mailService = '';
 
 if(env==='prod'){
   DbName = 'sargatech_training';
-  domainName = 'training.sargatechnology.com';
+  domainName = 'nubeselite.training';
 }else{
   DbName = 'sargatech_training'
   domainName = 'localhost:5000';
