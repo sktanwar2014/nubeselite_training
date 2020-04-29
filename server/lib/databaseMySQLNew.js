@@ -13,7 +13,7 @@ if(env==='prod'){
   domainName = 'training.sargatechnology.com';
 }else{
   DbName = 'sargatech_training'
-  domainName = 'localhost:3000';
+  domainName = 'localhost:5000';
 }
 
 

@@ -1,5 +1,5 @@
 const connection = require('../../lib/connection.js');
-const DbName = require('../../lib/databaseMySQLNew.js');
+const {DbName} = require('../../lib/databaseMySQLNew.js');
 
 const Course = function (params) {
 
