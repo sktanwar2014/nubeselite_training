@@ -150,26 +150,28 @@ const Topbar = ({ history }) => {
                           <li><a href="/about">About</a></li>
                           <li className=" dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Courses
-                          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                              {/* <li class="dropdown-divider"></li> */}
-                              {(sectionList ? sectionList : []).map((data, index) => {
-                                return (
-                                  <li class="dropdown-submenu  pg-width" key={Math.random()}>
-                                    <a class="dropdown-item" href="#" >{data.course}</a>
-                                    <ul class="dropdown-menu">
-                                      {/* <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li> */}
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                {/* <li class="dropdown-divider"></li> */}
+                                {(sectionList ? sectionList : []).map((data, index) => {
+                                  let relatedCourseList = (courseList.length > 0 ? courseList : []).filter(ele => {return ele.mid ===  data.id});
+                                  return (
+                                    <li class="dropdown-submenu  pg-width" key={Math.random()}>
+                                      <a class="dropdown-item" href="#" >{data.course}</a>
+                                      {(relatedCourseList.length > 0) &&
+                                        <ul class="dropdown-menu">
+                                          {/* <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li> */}
+                                          {(relatedCourseList.length > 0 ? relatedCourseList : []).map((datac, index) => {
+                                            return (
+                                             <li key={Math.random()} className="dropdown-item singleitem" dataid={datac.id} dataname={datac.name}><a href="#">{datac.name}</a></li>
+                                            )
+                                          })}
+                                        </ul>
+                                      } 
+                                    </li>
+                                  )
+                                })}
 
-                                      {(courseList.length > 0 ? courseList : []).map((datac, index) => {
-                                        return (
-                                          data.id === datac.mid ? <li key={Math.random()} className="dropdown-item singleitem" dataid={datac.id} dataname={datac.name}><a href="#">{datac.name}</a></li> : ''
-                                        )
-                                      })}
-                                    </ul>
-                                  </li>
-                                )
-                              })}
-
-                            </ul>
+                              </ul>
                           </li>
                           {/* <li><a href="/courses">Courses</a></li> */}
                           <li><a href="/schedule">Schedule</a></li>

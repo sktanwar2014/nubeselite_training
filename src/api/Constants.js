@@ -3,10 +3,6 @@
 // export const AUTH_URL = 'http://localhost:5000';
 // export const API_CONSUMER = 'http://localhost:5000';
 
-// export const API_URL = 'http://training.sargatechnology.com';
-// export const AUTH_URL = 'http://training.sargatechnology.com';
-// export const API_CONSUMER = 'http://training.sargatechnology.com';
-
 export const API_URL = 'http://nubeselite.training';
 export const AUTH_URL = 'http://nubeselite.training';
 export const API_CONSUMER = 'http://nubeselite.training';
