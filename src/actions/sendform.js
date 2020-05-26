@@ -8,7 +8,7 @@ export default function sendform(form) {
     formdata.forEach(function (val, index) {
         if (val.name && val.value && val.name.length > 0 && val.value.length > 0 && val.name !== "retURL") data[val.name] = val.value;
     });
-
+    
     // data = {};
     data.oid = "00D6F000002Y0a8";
     data.debug = "1";
@@ -18,12 +18,12 @@ export default function sendform(form) {
     ['email', 'mobile'].forEach(function (val, index) {
         data[val] = randomid + data[val];
     });
-
-    data['00N6F00000XtAFf'] = data['00N6F00000XtAFf'].split(',');
+    
+    if(data['00N6F00000XtAFf']){
+        data['00N6F00000XtAFf'] = data['00N6F00000XtAFf'].split(',');
+    }
 
     data.submit = "submit";
-
-    console.log(data);
 
     $.ajax({
         method: "GET",
